@@ -1,0 +1,30 @@
+[
+  {
+    "id": "default-1",
+    "title": "Evening Jasmine (Veena Melody)",
+    "artist": "Suvii Lofi Ensemble",
+    "url": "https://cdn.pixabay.com/download/audio/2022/05/16/audio_db6591201e.mp3?filename=meditation-bowl-singing-bowl-focus-study-music-112340.mp3",
+    "uploadedAt": "2026-01-01"
+  },
+  {
+    "id": "default-2",
+    "title": "Thanjavur Breeze (Bamboo Flute)",
+    "artist": "Classical Tamil Waves",
+    "url": "https://cdn.pixabay.com/download/audio/2022/10/25/audio_244a04d550.mp3?filename=relaxing-flute-music-124477.mp3",
+    "uploadedAt": "2026-01-01"
+  },
+  {
+    "id": "default-3",
+    "title": "1% Better Everyday (Study Lofi)",
+    "artist": "Mullai Beats",
+    "url": "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b87a8b8d.mp3?filename=chill-lofi-song-8444.mp3",
+    "uploadedAt": "2026-01-01"
+  },
+  {
+    "id": "default-4",
+    "title": "Gentle Tamil Monsoon (Rain & Veena)",
+    "artist": "Suvii Diary Soundscapes",
+    "url": "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=calm-meditation-109016.mp3",
+    "uploadedAt": "2026-01-01"
+  }
+]

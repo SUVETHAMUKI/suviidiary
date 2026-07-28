@@ -6,12 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "share": "node scripts/share-1b.mjs",
+    "share:1b": "node scripts/share-1b.mjs",
+    "share:ngrok": "npx -y ngrok http 3000",
+    "share:wifi": "next dev -H 0.0.0.0",
+    "seed": "npx -y tsx prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "6.4.1",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/nodemailer": "^8.0.1",
+    "@types/web-push": "^3.6.4",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.27.0",
     "next": "16.2.12",
+    "next-auth": "^4.24.15",
+    "nodemailer": "^9.0.3",
+    "prisma": "6.4.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "recharts": "^3.10.1",
+    "tailwind-merge": "^3.6.0",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

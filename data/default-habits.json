@@ -1,0 +1,13 @@
+[
+  { "id": "h-1", "name": "Wake up before 6am", "category": "Morning Routine" },
+  { "id": "h-2", "name": "Exercise / Meditate", "category": "Wellness" },
+  { "id": "h-3", "name": "Study 5 hr+", "category": "Growth & Study" },
+  { "id": "h-4", "name": "1 hr new skill", "category": "Growth & Study" },
+  { "id": "h-5", "name": "Consume healthy", "category": "Health & Diet" },
+  { "id": "h-6", "name": "Drink water (2-3L)", "category": "Health & Diet" },
+  { "id": "h-7", "name": "Speak English", "category": "Communication" },
+  { "id": "h-8", "name": "Aptitude / CA", "category": "Career Prep" },
+  { "id": "h-9", "name": "Feel gratitude", "category": "Mindfulness" },
+  { "id": "h-10", "name": "No phone by bed (1/2 hr)", "category": "Evening Routine" },
+  { "id": "h-11", "name": "Sleep before 11 pm", "category": "Evening Routine" }
+]

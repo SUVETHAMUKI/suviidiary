@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // For local development we use sqlite so it runs instantly without docker or external postgres.
+  // When deploying to Vercel with PostgreSQL, change provider = "postgresql" and set DATABASE_URL in .env
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String?
+  image        String?
+  bgImage      String?       // Custom base64 or Blob photo background
+  savingsGoal  Float         @default(5000)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  habits       Habit[]
+  tasks        Task[]
+  moodLogs     MoodLog[]
+  moneyEntries MoneyEntry[]
+  songs        Song[]
+}
+
+model Habit {
+  id        String     @id @default(cuid())
+  name      String
+  category  String?    @default("General")
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+  logs      HabitLog[]
+}
+
+model HabitLog {
+  id      String  @id @default(cuid())
+  date    String  // YYYY-MM-DD
+  done    Boolean @default(true)
+  habitId String
+  habit   Habit   @relation(fields: [habitId], references: [id], onDelete: Cascade)
+
+  @@unique([habitId, date])
+}
+
+model Task {
+  id        String   @id @default(cuid())
+  title     String
+  date      String   // YYYY-MM-DD
+  time      String   // HH:MM
+  repeat    String   @default("none") // "none" | "daily" | "weekly"
+  done      Boolean  @default(false)
+  notified  Boolean  @default(false)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model MoodLog {
+  id        String   @id @default(cuid())
+  date      String   // YYYY-MM-DD
+  mood      String   // "happy" | "blank" | "upset" | "stressed" | "tired" | "jealous" | "grateful"
+  note      String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, date])
+}
+
+model MoneyEntry {
+  id        String   @id @default(cuid())
+  type      String   // "income" | "expense"
+  category  String
+  amount    Float
+  date      String   // YYYY-MM-DD
+  note      String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Song {
+  id         String   @id @default(cuid())
+  title      String
+  artist     String
+  url        String
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  uploadedAt DateTime @default(now())
+}

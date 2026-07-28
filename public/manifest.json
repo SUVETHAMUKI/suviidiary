@@ -1,0 +1,15 @@
+{
+  "name": "Suvii Diary - Personal Glow-Up Companion",
+  "short_name": "Suvii Diary",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff5f7",
+  "theme_color": "#e0578a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
